@@ -1,5 +1,14 @@
 # AskMeAnything
 
+## Local Setup
+
+First, setup your local env with:
+
+```
+cp config/dev.exs.example config/dev.exs
+cp config/test.exs.example config/test.exs
+```
+
 To start your Phoenix server:
 
   * Setup the project with `mix setup`
