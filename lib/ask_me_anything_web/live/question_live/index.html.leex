@@ -1,13 +1,10 @@
-<h1>Listing Questions</h1>
+<h1>Ask me anything!</h1>
 
-<%= if @live_action in [:new] do %>
-  <%= live_modal @socket, AskMeAnythingWeb.QuestionLive.FormComponent,
-    id: @question.id || :new,
-    title: @page_title,
-    action: @live_action,
-    question: @question,
-    return_to: Routes.question_index_path(@socket, :index) %>
-<% end %>
+<%= live_component @socket, AskMeAnythingWeb.QuestionLive.FormComponent,
+  id: :new,
+  question: @question,
+  changeset: @changeset,
+  questions: @questions %>
 
 <table>
   <thead>

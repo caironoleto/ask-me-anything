@@ -1,6 +1,7 @@
 defmodule AskMeAnythingWeb.QuestionLive.Index do
   use AskMeAnythingWeb, :live_view
 
+  alias AskMeAnything.LiveInteraction
   alias AskMeAnything.LiveInteraction.Question
 
   @impl true
@@ -14,8 +15,16 @@ defmodule AskMeAnythingWeb.QuestionLive.Index do
   end
 
   defp apply_action(socket, :index, _params) do
+    question = %Question{}
+
     socket
     |> assign(:page_title, "Listing Questions")
-    |> assign(:question, %Question{})
+    |> assign(:changeset, LiveInteraction.change_question(question))
+    |> assign(:question, question)
+  end
+
+  @impl true
+  def handle_info({:add_question, question}, socket) do
+    {:noreply, update(socket, :questions, fn questions -> [question | questions] end)}
   end
 end
