@@ -17,7 +17,7 @@ defmodule AskMeAnythingWeb.Router do
   scope "/", AskMeAnythingWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    live "/", QuestionLive.Index, :index
   end
 
   # Other scopes may use custom stacks.

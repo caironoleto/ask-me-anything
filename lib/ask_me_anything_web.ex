@@ -88,6 +88,7 @@ defmodule AskMeAnythingWeb do
 
       import AskMeAnythingWeb.ErrorHelpers
       import AskMeAnythingWeb.Gettext
+      import AskMeAnythingWeb.LiveHelpers
       alias AskMeAnythingWeb.Router.Helpers, as: Routes
     end
   end
