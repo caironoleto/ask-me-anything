@@ -7,7 +7,7 @@ defmodule AskMeAnythingWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_ask_me_anything_key",
-    signing_salt: "i1mnRCe1"
+    signing_salt: "sW7eGNyJ"
   ]
 
   socket "/socket", AskMeAnythingWeb.UserSocket,

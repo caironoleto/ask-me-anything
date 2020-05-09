@@ -13,10 +13,10 @@ config :ask_me_anything,
 # Configures the endpoint
 config :ask_me_anything, AskMeAnythingWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "Y71oNvaw2Xx9tIGXW2f6rDfpcyJBFZ9TVCCc3ZkXipGkhrtzDa6mOmf23Tp+pQT4",
+  secret_key_base: "Ml0r9kex9yUKoO3DDLZ75wQm8nMbePV/t8tqasSk3rDokVc/qTuLcrKw9k2kkhge",
   render_errors: [view: AskMeAnythingWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: AskMeAnything.PubSub,
-  live_view: [signing_salt: "OUIk7PhU"]
+  live_view: [signing_salt: "MPICie6B"]
 
 # Configures Elixir's Logger
 config :logger, :console,

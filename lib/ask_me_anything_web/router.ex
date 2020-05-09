@@ -4,7 +4,8 @@ defmodule AskMeAnythingWeb.Router do
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
-    plug :fetch_flash
+    plug :fetch_live_flash
+    plug :put_root_layout, {AskMeAnythingWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -15,6 +16,8 @@ defmodule AskMeAnythingWeb.Router do
 
   scope "/", AskMeAnythingWeb do
     pipe_through :browser
+
+    live "/", PageLive, :index
   end
 
   # Other scopes may use custom stacks.
