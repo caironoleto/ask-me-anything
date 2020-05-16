@@ -11,8 +11,7 @@
     <tr>
       <th>Question</th>
       <th>Author</th>
-
-      <th></th>
+      <th>Thumb</th>
     </tr>
   </thead>
   <tbody id="questions">
@@ -20,6 +19,7 @@
       <tr id="question-<%= question.id %>">
         <td><%= question.question %></td>
         <td><%= question.author %></td>
+        <td><button type="button">👍</button><%= question.count %></td>
       </tr>
     <% end %>
   </tbody>
