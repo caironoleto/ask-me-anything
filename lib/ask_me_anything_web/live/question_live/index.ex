@@ -25,6 +25,10 @@ defmodule AskMeAnythingWeb.QuestionLive.Index do
 
   @impl true
   def handle_info({:add_question, question}, socket) do
-    {:noreply, update(socket, :questions, fn questions -> [question | questions] end)}
+    socket =
+      socket
+      |> assign(:questions, [question | socket.assigns.questions])
+
+    {:noreply, socket}
   end
 end
