@@ -3,8 +3,6 @@ defmodule AskMeAnythingWeb.QuestionLiveTest do
 
   import Phoenix.LiveViewTest
 
-  # alias AskMeAnything.LiveInteraction
-
   describe "Index" do
     test "adds a new question", %{conn: conn} do
       {:ok, live_view, html} = live(conn, Routes.question_index_path(conn, :index))
