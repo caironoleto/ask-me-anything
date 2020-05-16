@@ -6,10 +6,16 @@ defmodule AskMeAnythingWeb.QuestionLiveTest do
   # alias AskMeAnything.LiveInteraction
 
   describe "Index" do
-    test "lists all questions", %{conn: conn} do
-      {:ok, _index_live, html} = live(conn, Routes.question_index_path(conn, :index))
+    test "adds a new question", %{conn: conn} do
+      {:ok, live_view, html} = live(conn, Routes.question_index_path(conn, :index))
 
       assert html =~ "Ask me anything"
+
+      assert live_view
+             |> element("#question-form")
+             |> render_change(%{
+               question: %{question: "My Awesome Question", author: "Cairo Noleto"}
+             }) =~ "My Awesome Question"
     end
   end
 end
