@@ -19,12 +19,12 @@ defmodule AskMeAnythingWeb.QuestionLive.FormComponent do
 
   defp save_question(socket, %{"question" => question, "author" => author}) do
     question = %Question{
-      id: Ecto.UUID.generate,
+      id: Ecto.UUID.generate(),
       question: question,
       author: author
     }
 
-    send self(), {:add_question, question}
+    send(self(), {:add_question, question})
 
     {:noreply, socket}
   end
